@@ -5,10 +5,12 @@ import PackageDescription
 
 extension String {
     static let basicAuth: Self = "BasicAuth"
+    static let bearerAuth: Self = "BearerAuth"
 }
 
 extension Target.Dependency {
     static var basicAuth: Self { .target(name: .basicAuth) }
+    static var bearerAuth: Self { .target(name: .bearerAuth) }
 }
 
 extension Target.Dependency {
@@ -34,13 +36,26 @@ let package = Package(
                 .urlRouting
             ]
         ),
+        .target(
+            name: .bearerAuth,
+            dependencies: [
+                .urlRouting
+            ]
+        ),
         .testTarget(
             name: .basicAuth + " Tests",
             dependencies: [
                 .basicAuth,
                 .urlRouting
             ]
-        )
+        ),
+        .testTarget(
+            name: .bearerAuth + " Tests",
+            dependencies: [
+                .bearerAuth,
+                .urlRouting
+            ]
+        ),
     ],
     swiftLanguageModes: [.v6]
 )
