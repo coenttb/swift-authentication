@@ -25,6 +25,7 @@ let package = Package(
     ],
     products: [
         .library(name: .basicAuth, targets: [.basicAuth]),
+        .library(name: .bearerAuth, targets: [.bearerAuth]),
     ],
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-url-routing", from: "0.6.0"),
