@@ -4,6 +4,7 @@ import Foundation
 import PackageDescription
 
 extension String {
+    static let authentication: Self = "Authentication"
     static let basicAuth: Self = "BasicAuth"
     static let bearerAuth: Self = "BearerAuth"
 }
@@ -24,6 +25,7 @@ let package = Package(
         .iOS(.v17)
     ],
     products: [
+        .library(name: .authentication, targets: [.basicAuth, .bearerAuth]),
         .library(name: .basicAuth, targets: [.basicAuth]),
         .library(name: .bearerAuth, targets: [.bearerAuth]),
     ],
