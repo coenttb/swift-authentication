@@ -9,7 +9,7 @@ import Foundation
 import URLRouting
 
 extension BasicAuth {
-    public struct Router: ParserPrinter {
+    public struct Router: ParserPrinter, Sendable {
         
         public init(){}
         
