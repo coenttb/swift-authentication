@@ -10,12 +10,15 @@ extension String {
 }
 
 extension Target.Dependency {
+    static var authentication: Self { .target(name: .authentication) }
     static var basicAuth: Self { .target(name: .basicAuth) }
     static var bearerAuth: Self { .target(name: .bearerAuth) }
 }
 
 extension Target.Dependency {
     static var urlRouting: Self { .product(name: "URLRouting", package: "swift-url-routing") }
+    static var coenttbWeb: Self { .product(name: "Coenttb Web", package: "coenttb-web") }
+    static var dependencies: Self { .product(name: "Dependencies", package: "swift-dependencies") }
 }
 
 let package = Package(
@@ -25,14 +28,26 @@ let package = Package(
         .iOS(.v17)
     ],
     products: [
-        .library(name: .authentication, targets: [.basicAuth, .bearerAuth]),
+        .library(name: .authentication, targets: [.authentication, .basicAuth, .bearerAuth]),
         .library(name: .basicAuth, targets: [.basicAuth]),
         .library(name: .bearerAuth, targets: [.bearerAuth]),
     ],
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-url-routing", from: "0.6.0"),
+        .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.6.0"),
+        .package(url: "https://github.com/coenttb/coenttb-web", branch: "main"),
     ],
     targets: [
+        .target(
+            name: .authentication,
+            dependencies: [
+                .urlRouting,
+                .coenttbWeb,
+                .basicAuth,
+                .bearerAuth,
+                .dependencies,
+            ]
+        ),
         .target(
             name: .basicAuth,
             dependencies: [
