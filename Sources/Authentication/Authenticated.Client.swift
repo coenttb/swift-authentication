@@ -28,7 +28,6 @@ APIRouter.Output == API,
 AuthRouter.Input == URLRequestData,
 AuthRouter.Output == Auth
 {
-    public typealias AuthenticatedRouter = Authentication.API<Auth, API>.Router<AuthRouter, APIRouter>
     
     private let baseURL: URL
     private let auth: Auth
