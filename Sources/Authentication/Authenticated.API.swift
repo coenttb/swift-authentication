@@ -19,7 +19,7 @@ import FoundationNetworking
 public struct API<
     Auth: Equatable & Sendable,
     OtherAPI: Equatable & Sendable
-> {
+>: Equatable & Sendable {
     let auth: Auth
     let api: OtherAPI
     
