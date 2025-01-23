@@ -4,13 +4,11 @@ import Foundation
 import PackageDescription
 
 extension String {
-    static let authentication: Self = "Authentication"
     static let basicAuth: Self = "BasicAuth"
     static let bearerAuth: Self = "BearerAuth"
 }
 
 extension Target.Dependency {
-    static var authentication: Self { .target(name: .authentication) }
     static var basicAuth: Self { .target(name: .basicAuth) }
     static var bearerAuth: Self { .target(name: .bearerAuth) }
 }
@@ -28,7 +26,7 @@ let package = Package(
         .iOS(.v17)
     ],
     products: [
-        .library(name: .authentication, targets: [.authentication, .basicAuth, .bearerAuth]),
+        .library(name: "Authentication", targets: [.basicAuth, .bearerAuth]),
         .library(name: .basicAuth, targets: [.basicAuth]),
         .library(name: .bearerAuth, targets: [.bearerAuth]),
     ],
@@ -38,16 +36,6 @@ let package = Package(
         .package(url: "https://github.com/coenttb/coenttb-web", branch: "main"),
     ],
     targets: [
-        .target(
-            name: .authentication,
-            dependencies: [
-                .urlRouting,
-                .coenttbWeb,
-                .basicAuth,
-                .bearerAuth,
-                .dependencies,
-            ]
-        ),
         .target(
             name: .basicAuth,
             dependencies: [

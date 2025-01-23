@@ -1,5 +1,5 @@
 {
-  "originHash" : "29a8486432ac2cb3d2acbc0875d4a4b4a52a70c4d1c8b0de124002d6ecb6a6e2",
+  "originHash" : "3f3a211ea57504aee29948ad667382a399ce9c8ae5c6499e17af4b50c66df679",
   "pins" : [
     {
       "identity" : "coenttb-html",
@@ -16,7 +16,7 @@
       "location" : "https://github.com/coenttb/coenttb-web",
       "state" : {
         "branch" : "main",
-        "revision" : "bcf4a6e71807fce390b8699e4ceb4c757813437f"
+        "revision" : "2d56f598f95b4a61d738071e63517e6e651d6fda"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-case-paths",
       "state" : {
-        "revision" : "bc92c4b27f9a84bfb498cdbfdf35d5a357e9161f",
-        "version" : "1.5.6"
+        "revision" : "e7039aaa4d9cf386fa8324a89f258c3f2c54d751",
+        "version" : "1.6.0"
       }
     },
     {
@@ -133,7 +133,7 @@
       "location" : "https://github.com/coenttb/swift-html.git",
       "state" : {
         "branch" : "main",
-        "revision" : "186dad2bc33d648bf8cfe9d39fff119fb5752784"
+        "revision" : "23bd43704174c2cab50f01e8c04263427e59f088"
       }
     },
     {
@@ -175,10 +175,10 @@
     {
       "identity" : "swift-parsing",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pointfreeco/swift-parsing",
+      "location" : "https://github.com/pointfreeco/swift-parsing.git",
       "state" : {
-        "revision" : "a0e7d73f462c1c38c59dc40a3969ac40cea42950",
-        "version" : "0.13.0"
+        "branch" : "main",
+        "revision" : "3432cb81164dd3d69a75d0d63205be5fbae2c34b"
       }
     },
     {
@@ -193,10 +193,19 @@
     {
       "identity" : "swift-syntax",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftlang/swift-syntax.git",
+      "location" : "https://github.com/swiftlang/swift-syntax",
       "state" : {
         "revision" : "0687f71944021d616d34d922343dcef086855920",
         "version" : "600.0.1"
+      }
+    },
+    {
+      "identity" : "swift-tagged",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-tagged",
+      "state" : {
+        "branch" : "main",
+        "revision" : "7061233809f745e2ba6c3e8c6f984a8f36257226"
       }
     },
     {
@@ -214,13 +223,13 @@
       "location" : "https://github.com/coenttb/swift-web",
       "state" : {
         "branch" : "main",
-        "revision" : "44f7e3ccab233870b71f322244632673d61330ff"
+        "revision" : "7a4ae07c1d6c2bcb3fb8ceae27fd8b16aa4b98f0"
       }
     },
     {
       "identity" : "xctest-dynamic-overlay",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay.git",
+      "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
       "state" : {
         "revision" : "a3f634d1a409c7979cabc0a71b3f26ffa9fc8af1",
         "version" : "1.4.3"
