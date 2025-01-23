@@ -8,6 +8,7 @@ import URLRouting
 import BearerAuth
 import Foundation
 import Dependencies
+import Coenttb_Web_Dependencies
 
 #if canImport(FoundationNetworking)
 import FoundationNetworking
@@ -32,22 +33,21 @@ AuthRouter.Output == Auth
     private let baseURL: URL
     private let auth: Auth
     
-    private let session: @Sendable (URLRequest) async throws -> (Data, URLResponse)
     private let router: APIRouter
     private let buildClient: @Sendable (@escaping @Sendable (API) throws -> URLRequest) -> ClientOutput
     private let authenticatedRouter: Authentication.API<Auth, API>.Router<AuthRouter, APIRouter>
     
+    @Dependency(\.defaultSession) var session
+    
     public init(
         baseURL: URL,
         auth: Auth,
-        session: @escaping @Sendable (URLRequest) async throws -> (Data, URLResponse) = { request in try await URLSession.shared.data(for: request) },
         router: APIRouter,
         authRouter: AuthRouter,
         buildClient: @escaping @Sendable (@escaping @Sendable (API) throws -> URLRequest) -> ClientOutput
     ) {
         self.baseURL = baseURL
         self.auth = auth
-        self.session = session
         self.router = router
         self.buildClient = buildClient
         self.authenticatedRouter = Authentication.API.Router(
