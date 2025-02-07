@@ -14,5 +14,15 @@ public struct BearerAuth: Codable, Hashable, Sendable {
     public init(token: String) {
         self.token = token
     }
+    
+    public enum CodingKeys: CodingKey {
+        case token
+    }
+}
+
+extension BearerAuth: ExpressibleByStringLiteral {
+    public init(stringLiteral value: StringLiteralType) {
+        self.token = value
+    }
 }
 

@@ -16,4 +16,9 @@ public struct BasicAuth: Codable, Hashable, Sendable {
         self.username = username
         self.password = password
     }
+    
+    public enum CodingKeys: CodingKey {
+        case username
+        case password
+    }
 }
