@@ -8,7 +8,7 @@
 import Testing
 import URLRouting
 import Foundation
-@testable import BearerAuth
+@testable import AuthenticationTypes_URLRouting
 
 @Suite(
     "BearerAuth Router Tests"

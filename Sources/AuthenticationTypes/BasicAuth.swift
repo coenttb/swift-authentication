@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import URLRouting
 
 public struct BasicAuth: Codable, Hashable, Sendable {
     public let username: String

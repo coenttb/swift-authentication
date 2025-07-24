@@ -6,9 +6,8 @@
 //
 
 import Testing
-import URLRouting
 import Foundation
-@testable import BasicAuth
+@testable import AuthenticationTypes_URLRouting
 
 @Suite(
     "BasicAuth Router Tests"
