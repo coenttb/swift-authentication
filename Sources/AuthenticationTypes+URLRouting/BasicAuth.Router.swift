@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AuthenticationTypes
 import URLRouting
 
 extension BasicAuth {

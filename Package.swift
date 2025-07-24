@@ -4,19 +4,23 @@ import Foundation
 import PackageDescription
 
 extension String {
-    static let basicAuth: Self = "BasicAuth"
-    static let bearerAuth: Self = "BearerAuth"
+    static let authentication: Self = "Authentication"
+    static let authenticationTypes: Self = "AuthenticationTypes"
+    static let authenticationTypesURLRouting: Self = "AuthenticationTypes+URLRouting"
+    static let authenticationTypesEmailAddress: Self = "AuthenticationTypes+EmailAddress"
 }
 
 extension Target.Dependency {
-    static var basicAuth: Self { .target(name: .basicAuth) }
-    static var bearerAuth: Self { .target(name: .bearerAuth) }
+    static var authentication: Self { .target(name: .authentication) }
+    static var authenticationTypes: Self { .target(name: .authenticationTypes) }
+    static var authenticationTypesURLRouting: Self { .target(name: .authenticationTypesURLRouting) }
+    static var authenticationTypesEmailAddress: Self { .target(name: .authenticationTypesEmailAddress) }
 }
 
 extension Target.Dependency {
     static var urlRouting: Self { .product(name: "URLRouting", package: "swift-url-routing") }
-    static var coenttbWeb: Self { .product(name: "Coenttb Web", package: "coenttb-web") }
     static var dependencies: Self { .product(name: "Dependencies", package: "swift-dependencies") }
+    static var emailaddress: Self { .product(name: "EmailAddress", package: "swift-emailaddress-type") }
 }
 
 let package = Package(
@@ -26,42 +30,68 @@ let package = Package(
         .iOS(.v17)
     ],
     products: [
-        .library(name: "Authentication", targets: [.basicAuth, .bearerAuth]),
-        .library(name: .basicAuth, targets: [.basicAuth]),
-        .library(name: .bearerAuth, targets: [.bearerAuth]),
+        .library(
+            name: .authentication,
+            targets: [
+                .authentication,
+                .authenticationTypes,
+                .authenticationTypesURLRouting
+            ]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-url-routing", from: "0.6.0"),
         .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.6.0"),
-        .package(url: "https://github.com/coenttb/coenttb-web", branch: "main"),
+        .package(url: "https://github.com/coenttb/swift-emailaddress-type", branch: "main"),
     ],
     targets: [
         .target(
-            name: .basicAuth,
+            name: .authentication,
             dependencies: [
-                .urlRouting
+                .authenticationTypes,
+                .authenticationTypesURLRouting,
+                .authenticationTypesEmailAddress,
             ]
         ),
         .target(
-            name: .bearerAuth,
+            name: .authenticationTypes,
+            dependencies: []
+        ),
+        .testTarget(
+            name: .authenticationTypes.tests,
             dependencies: [
+                .authenticationTypes
+            ]
+        ),
+        .target(
+            name: .authenticationTypesURLRouting,
+            dependencies: [
+                .authenticationTypes,
                 .urlRouting
             ]
         ),
         .testTarget(
-            name: .basicAuth + " Tests",
+            name: .authenticationTypesURLRouting.tests,
             dependencies: [
-                .basicAuth,
-                .urlRouting
+                .authenticationTypesURLRouting
+            ]
+        ),
+
+        .target(
+            name: .authenticationTypesEmailAddress,
+            dependencies: [
+                .authenticationTypes,
+                .emailaddress
             ]
         ),
         .testTarget(
-            name: .bearerAuth + " Tests",
+            name: .authenticationTypesEmailAddress.tests,
             dependencies: [
-                .bearerAuth,
-                .urlRouting
+                .authenticationTypesEmailAddress
             ]
         ),
     ],
     swiftLanguageModes: [.v6]
 )
+
+extension String { var tests: Self { self + " Tests" } }

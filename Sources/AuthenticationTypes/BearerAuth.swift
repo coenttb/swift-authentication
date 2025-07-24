@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import URLRouting
 
 public struct BearerAuth: Codable, Hashable, Sendable {
     public let token: String
