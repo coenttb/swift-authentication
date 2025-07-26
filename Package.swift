@@ -32,11 +32,7 @@ let package = Package(
     products: [
         .library(
             name: .authentication,
-            targets: [
-                .authentication,
-                .authenticationTypes,
-                .authenticationTypesURLRouting
-            ]
+            targets: [.authentication ]
         ),
     ],
     dependencies: [
