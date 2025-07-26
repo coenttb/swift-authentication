@@ -1,5 +1,5 @@
 {
-  "originHash" : "c20f3d4ee804336e287eb712dae1be4ff882c18b336d7fd93a2364393fedc5ae",
+  "originHash" : "eded1e962b49e6fe138f76faafab78ab84607859ebbaf7d13edbd5391298e993",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -60,8 +60,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/coenttb/swift-domain-type",
       "state" : {
-        "branch" : "main",
-        "revision" : "e0e2116dbe676f50d27de6a49de52aa632bd6d14"
+        "revision" : "8717b1938bcda8be8dbfff2ce2bee64613b065ee",
+        "version" : "0.0.1"
       }
     },
     {
@@ -69,8 +69,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/coenttb/swift-emailaddress-type",
       "state" : {
-        "branch" : "main",
-        "revision" : "43594e4e569efeb0da7baf93e37f2a8b0a69a707"
+        "revision" : "7a36ce866c9d657385d6c55b3685960e5a036e5d",
+        "version" : "0.0.1"
       }
     },
     {
@@ -80,6 +80,51 @@
       "state" : {
         "revision" : "3432cb81164dd3d69a75d0d63205be5fbae2c34b",
         "version" : "0.14.1"
+      }
+    },
+    {
+      "identity" : "swift-rfc-1035",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swift-web-standards/swift-rfc-1035",
+      "state" : {
+        "revision" : "95e9ca2e3f3ec303978e8cd18013e02b7d0f8a62",
+        "version" : "0.0.1"
+      }
+    },
+    {
+      "identity" : "swift-rfc-1123",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swift-web-standards/swift-rfc-1123",
+      "state" : {
+        "revision" : "97b8decb5fdfc02177faa5965a95606e36373388",
+        "version" : "0.0.1"
+      }
+    },
+    {
+      "identity" : "swift-rfc-5321",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swift-web-standards/swift-rfc-5321",
+      "state" : {
+        "revision" : "449d9291d1d2f6dcd6793c7d4ea855db1e7b062d",
+        "version" : "0.0.1"
+      }
+    },
+    {
+      "identity" : "swift-rfc-5322",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swift-web-standards/swift-rfc-5322",
+      "state" : {
+        "revision" : "0d648876050103ce8e005f545f02c1f29724e9e5",
+        "version" : "0.0.1"
+      }
+    },
+    {
+      "identity" : "swift-rfc-6531",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swift-web-standards/swift-rfc-6531",
+      "state" : {
+        "revision" : "af0fb8259f03e5c34955ecf62c0c95cb61019907",
+        "version" : "0.0.1"
       }
     },
     {
@@ -98,15 +143,6 @@
       "state" : {
         "revision" : "1cfd564259ecb1d324bb718a8f03e513dab738d2",
         "version" : "0.6.2"
-      }
-    },
-    {
-      "identity" : "swift-web-standards",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/coenttb/swift-web-standards",
-      "state" : {
-        "branch" : "main",
-        "revision" : "5bf44d734c5f5efce72cd3330b279f040c4281ef"
       }
     },
     {

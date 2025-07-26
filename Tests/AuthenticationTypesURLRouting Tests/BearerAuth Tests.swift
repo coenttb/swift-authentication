@@ -8,7 +8,7 @@
 import Testing
 import URLRouting
 import Foundation
-@testable import AuthenticationTypes_URLRouting
+@testable import AuthenticationTypesURLRouting
 
 @Suite(
     "BearerAuth Router Tests"
@@ -35,7 +35,7 @@ struct BearerAuthRouterTests {
             let parsed = try router.parse(requestData)
             #expect(parsed == nil, "Parsing should fail for invalid Bearer prefix")
         } catch {
-            #expect(true, "An error was thrown as expected.")
+            #expect(Bool(true), "An error was thrown as expected.")
         }
     }
     

@@ -6,5 +6,5 @@
 //
 
 @_exported import AuthenticationTypes
-@_exported import AuthenticationTypes_URLRouting
-@_exported import AuthenticationTypes_EmailAddress
+@_exported import AuthenticationTypesURLRouting
+@_exported import AuthenticationTypesEmailAddress

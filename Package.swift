@@ -6,8 +6,8 @@ import PackageDescription
 extension String {
     static let authentication: Self = "Authentication"
     static let authenticationTypes: Self = "AuthenticationTypes"
-    static let authenticationTypesURLRouting: Self = "AuthenticationTypes+URLRouting"
-    static let authenticationTypesEmailAddress: Self = "AuthenticationTypes+EmailAddress"
+    static let authenticationTypesURLRouting: Self = "AuthenticationTypesURLRouting"
+    static let authenticationTypesEmailAddress: Self = "AuthenticationTypesEmailAddress"
 }
 
 extension Target.Dependency {
@@ -42,7 +42,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-url-routing", from: "0.6.0"),
         .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.6.0"),
-        .package(url: "https://github.com/coenttb/swift-emailaddress-type", branch: "main"),
+        .package(url: "https://github.com/coenttb/swift-emailaddress-type", from: "0.0.1"),
     ],
     targets: [
         .target(
