@@ -19,7 +19,6 @@ extension Target.Dependency {
 
 extension Target.Dependency {
     static var urlRouting: Self { .product(name: "URLRouting", package: "swift-url-routing") }
-    static var dependencies: Self { .product(name: "Dependencies", package: "swift-dependencies") }
     static var emailaddress: Self { .product(name: "EmailAddress", package: "swift-emailaddress-type") }
 }
 
@@ -37,7 +36,6 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-url-routing", from: "0.6.0"),
-        .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.6.0"),
         .package(url: "https://github.com/coenttb/swift-emailaddress-type", from: "0.0.1"),
     ],
     targets: [
