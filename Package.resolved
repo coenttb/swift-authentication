@@ -76,7 +76,7 @@
     {
       "identity" : "swift-parsing",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pointfreeco/swift-parsing.git",
+      "location" : "https://github.com/pointfreeco/swift-parsing",
       "state" : {
         "revision" : "3432cb81164dd3d69a75d0d63205be5fbae2c34b",
         "version" : "0.14.1"
