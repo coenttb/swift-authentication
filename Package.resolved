@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-case-paths",
       "state" : {
-        "revision" : "e7039aaa4d9cf386fa8324a89f258c3f2c54d751",
-        "version" : "1.6.0"
+        "revision" : "9810c8d6c2914de251e072312f01d3bf80071852",
+        "version" : "1.7.1"
       }
     },
     {
@@ -31,10 +31,10 @@
     {
       "identity" : "swift-collections",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-collections.git",
+      "location" : "https://github.com/apple/swift-collections",
       "state" : {
-        "revision" : "671108c96644956dddcd89dd59c203dcdb36cec7",
-        "version" : "1.1.4"
+        "revision" : "8c0c0a8b49e080e54e5e328cc552821ff07cd341",
+        "version" : "1.2.1"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-dependencies",
       "state" : {
-        "revision" : "85f89f5d0ce5a18945f65371d40ca997da85a41a",
-        "version" : "1.6.3"
+        "revision" : "4c90d6b2b9bf0911af87b103bb40f41771891596",
+        "version" : "1.9.2"
       }
     },
     {
@@ -132,8 +132,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swiftlang/swift-syntax",
       "state" : {
-        "revision" : "0687f71944021d616d34d922343dcef086855920",
-        "version" : "600.0.1"
+        "revision" : "f99ae8aa18f0cf0d53481901f88a0991dc3bd4a2",
+        "version" : "601.0.1"
       }
     },
     {
@@ -150,8 +150,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
       "state" : {
-        "revision" : "a3f634d1a409c7979cabc0a71b3f26ffa9fc8af1",
-        "version" : "1.4.3"
+        "revision" : "23e3442166b5122f73f9e3e622cd1e4bafeab3b7",
+        "version" : "1.6.0"
       }
     }
   ],
