@@ -16,8 +16,8 @@ extension BearerAuth {
         
         public var body: some URLRouting.Router<BearerAuth> {
             Parse(.memberwise(BearerAuth.init(token:))) {
-                Headers {
-                    Field("Authorization") {
+                URLRouting.Headers {
+                    URLRouting.Field("Authorization") {
                         "Bearer "
                         Parse(.string)
                     }
