@@ -9,3 +9,6 @@
 @_exported import RFC_7617
 @_exported import AuthenticationTypesURLRouting
 @_exported import AuthenticationTypesEmailAddress
+
+public typealias BearerAuth = RFC_6750.Bearer
+public typealias BasicAuth = RFC_7617.Basic
