@@ -14,12 +14,12 @@ extension BasicAuth {
         
         public init(){}
         
-        public var body: some URLRouting.Router<BasicAuth> {
+        public var body: some ParserPrinter<URLRequestData, BasicAuth> {
             Parse(.memberwise(BasicAuth.init)) {
-                Headers {
-                    Field("Authorization") {
+                URLRouting.Headers {
+                    URLRouting.Field("Authorization") {
                         "Basic "
-                        Parse(.string)
+                        URLRouting.Parse(.string)
                             .map(
                                 .convert(
                                     apply: { (base64String: String) -> (String, String)? in
