@@ -5,16 +5,14 @@ import PackageDescription
 
 extension String {
     static let authentication: Self = "Authentication"
-    static let authenticationTypes: Self = "AuthenticationTypes"
-    static let authenticationTypesURLRouting: Self = "AuthenticationTypesURLRouting"
-    static let authenticationTypesEmailAddress: Self = "AuthenticationTypesEmailAddress"
+    static let authenticationURLRouting: Self = "AuthenticationURLRouting"
+    static let authenticationEmailAddress: Self = "AuthenticationEmailAddress"
 }
 
 extension Target.Dependency {
     static var authentication: Self { .target(name: .authentication) }
-    static var authenticationTypes: Self { .target(name: .authenticationTypes) }
-    static var authenticationTypesURLRouting: Self { .target(name: .authenticationTypesURLRouting) }
-    static var authenticationTypesEmailAddress: Self { .target(name: .authenticationTypesEmailAddress) }
+    static var authenticationURLRouting: Self { .target(name: .authenticationURLRouting) }
+    static var authenticationEmailAddress: Self { .target(name: .authenticationEmailAddress) }
 }
 
 extension Target.Dependency {
@@ -46,12 +44,12 @@ let package = Package(
         .target(
             name: .authentication,
             dependencies: [
-                .authenticationTypesURLRouting,
-                .authenticationTypesEmailAddress,
+                .authenticationURLRouting,
+                .authenticationEmailAddress,
             ]
         ),
         .target(
-            name: .authenticationTypesURLRouting,
+            name: .authenticationURLRouting,
             dependencies: [
                 .rfc6750,
                 .rfc7617,
@@ -59,14 +57,14 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: .authenticationTypesURLRouting.tests,
+            name: .authenticationURLRouting.tests,
             dependencies: [
-                .authenticationTypesURLRouting
+                .authenticationURLRouting
             ]
         ),
 
         .target(
-            name: .authenticationTypesEmailAddress,
+            name: .authenticationEmailAddress,
             dependencies: [
                 .rfc6750,
                 .rfc7617,
@@ -74,9 +72,9 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: .authenticationTypesEmailAddress.tests,
+            name: .authenticationEmailAddress.tests,
             dependencies: [
-                .authenticationTypesEmailAddress
+                .authenticationEmailAddress
             ]
         ),
     ],

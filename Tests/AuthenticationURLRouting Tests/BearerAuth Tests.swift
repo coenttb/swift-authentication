@@ -8,7 +8,7 @@
 import Testing
 import URLRouting
 import Foundation
-@testable import AuthenticationTypesURLRouting
+@testable import AuthenticationURLRouting
 
 @Suite(
     "RFC_6750.Bearer Router Tests"

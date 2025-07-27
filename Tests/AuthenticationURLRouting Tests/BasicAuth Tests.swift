@@ -7,7 +7,7 @@
 
 import Testing
 import Foundation
-@testable import AuthenticationTypesURLRouting
+@testable import AuthenticationURLRouting
 
 @Suite(
     "RFC_7617.Basic Router Tests"
