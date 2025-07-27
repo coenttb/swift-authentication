@@ -9,7 +9,6 @@ import Foundation
 import Parsing
 
 extension Conversion {
-    @inlinable
     @_disfavoredOverload
     public static func memberwise<Values, Struct>(
         _ initializer: @escaping (Values) throws -> Struct
@@ -20,20 +19,16 @@ extension Conversion {
 
 extension Conversions {
     public struct ThrowingMemberwise<Values, Struct>: Conversion {
-        @usableFromInline
         let initializer: (Values) throws -> Struct
         
-        @usableFromInline
         init(initializer: @escaping (Values) throws -> Struct) {
             self.initializer = initializer
         }
         
-        @inlinable
         public func apply(_ input: Values) throws -> Struct {
             try self.initializer(input)
         }
         
-        @inlinable
         public func unapply(_ output: Struct) throws -> Values {
             let ptr = unsafeBitCast(Struct.self as Any.Type, to: UnsafeRawPointer.self)
             guard ptr.load(as: Int.self) == 512
@@ -68,12 +63,9 @@ extension Conversions {
 }
 
 
-@usableFromInline
 struct ConvertingError: Error {
-  @usableFromInline
   let message: String
 
-  @usableFromInline
   init(_ message: String = "") {
     self.message = message
   }
