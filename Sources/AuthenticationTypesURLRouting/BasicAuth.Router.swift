@@ -6,16 +6,16 @@
 //
 
 import Foundation
-import AuthenticationTypes
+import RFC_6750
 import URLRouting
 
-extension BasicAuth {
+extension RFC_7617.Basic {
     public struct Router: ParserPrinter, Sendable {
         
         public init(){}
         
-        public var body: some ParserPrinter<URLRequestData, BasicAuth> {
-            Parse(.memberwise(BasicAuth.init)) {
+        public var body: some ParserPrinter<URLRequestData, RFC_7617.Basic> {
+            Parse(.memberwise(RFC_7617.Basic.init)) {
                 URLRouting.Headers {
                     URLRouting.Field("Authorization") {
                         "Basic "

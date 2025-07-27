@@ -10,12 +10,12 @@ import Foundation
 @testable import AuthenticationTypesURLRouting
 
 @Suite(
-    "BasicAuth Router Tests"
+    "RFC_7617.Basic Router Tests"
 )
-struct BasicAuthRouterTests {
+struct RFC_7617BasicRouterTests {
     @Test("Parses valid Basic Auth header")
-    func testParseValidBasicAuthHeader() throws {
-        let router = BasicAuth.Router()
+    func testParseValidRFC_7617BasicHeader() throws {
+        let router = RFC_7617.Basic.Router()
         let header = "Basic dXNlcm5hbWU6cGFzc3dvcmQ=" // username:password
         
         let requestData = URLRequestData(headers: ["Authorization": [header]])
@@ -26,8 +26,8 @@ struct BasicAuthRouterTests {
     }
     
     @Test("Fails gracefully on invalid Basic Auth header")
-    func testParseInvalidBasicAuthHeader() throws {
-        let router = BasicAuth.Router()
+    func testParseInvalidRFC_7617BasicHeader() throws {
+        let router = RFC_7617.Basic.Router()
         let invalidHeader = "Basic invalid_base64"
         let requestData = URLRequestData(headers: ["Authorization": [invalidHeader]])
 
@@ -40,9 +40,9 @@ struct BasicAuthRouterTests {
     }
     
     @Test("Prints Basic Auth header correctly")
-    func testPrintBasicAuthHeader() throws {
-        let router = BasicAuth.Router()
-        let auth = BasicAuth(username: "testuser", password: "testpass")
+    func testPrintRFC_7617BasicHeader() throws {
+        let router = RFC_7617.Basic.Router()
+        let auth = try RFC_7617.Basic(username: "testuser", password: "testpass")
 
         let printed = try router.print(auth)
         let expectedHeader = "Basic " + Data("testuser:testpass".utf8).base64EncodedString()
@@ -55,7 +55,7 @@ struct BasicAuthRouterTests {
 
     @Test("Parses and prints correctly in a round trip")
     func testRoundTrip() throws {
-        let router = BasicAuth.Router()
+        let router = RFC_7617.Basic.Router()
         let header = "Basic dGVzdHVzZXI6dGVzdHBhc3M=" // testuser:testpass
 
         let requestData = URLRequestData(headers: ["Authorization": [header]])
@@ -71,7 +71,7 @@ struct BasicAuthRouterTests {
 
     @Test("Parses edge cases in Basic Auth header")
     func testParseEdgeCases() throws {
-        let router = BasicAuth.Router()
+        let router = RFC_7617.Basic.Router()
         let specialHeader = "Basic dXNlcm5hbWU6c3BlY2lhbCFAY2hhcnMk" // username:special!@chars$
 
         let requestData = URLRequestData(headers: ["Authorization": [specialHeader]])

@@ -20,6 +20,8 @@ extension Target.Dependency {
 extension Target.Dependency {
     static var urlRouting: Self { .product(name: "URLRouting", package: "swift-url-routing") }
     static var emailaddress: Self { .product(name: "EmailAddress", package: "swift-emailaddress-type") }
+    static var rfc6750: Self { .product(name: "RFC_6750", package: "swift-rfc-6750") }
+    static var rfc7617: Self { .product(name: "RFC_7617", package: "swift-rfc-7617") }
 }
 
 let package = Package(
@@ -37,30 +39,22 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-url-routing", from: "0.6.2"),
         .package(url: "https://github.com/coenttb/swift-emailaddress-type", from: "0.0.1"),
+        .package(url: "https://github.com/swift-web-standards/swift-rfc-6750", from: "0.0.1"),
+        .package(url: "https://github.com/swift-web-standards/swift-rfc-7617", from: "0.0.1"),
     ],
     targets: [
         .target(
             name: .authentication,
             dependencies: [
-                .authenticationTypes,
                 .authenticationTypesURLRouting,
                 .authenticationTypesEmailAddress,
             ]
         ),
         .target(
-            name: .authenticationTypes,
-            dependencies: []
-        ),
-        .testTarget(
-            name: .authenticationTypes.tests,
-            dependencies: [
-                .authenticationTypes
-            ]
-        ),
-        .target(
             name: .authenticationTypesURLRouting,
             dependencies: [
-                .authenticationTypes,
+                .rfc6750,
+                .rfc7617,
                 .urlRouting
             ]
         ),
@@ -74,7 +68,8 @@ let package = Package(
         .target(
             name: .authenticationTypesEmailAddress,
             dependencies: [
-                .authenticationTypes,
+                .rfc6750,
+                .rfc7617,
                 .emailaddress
             ]
         ),

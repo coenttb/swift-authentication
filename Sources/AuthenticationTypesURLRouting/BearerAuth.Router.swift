@@ -6,16 +6,16 @@
 //
 
 import Foundation
-import AuthenticationTypes
+import RFC_6750
 import URLRouting
 
-extension BearerAuth {
+extension RFC_6750.Bearer {
     public struct Router: ParserPrinter, Sendable {
         
         public init() {}
         
-        public var body: some ParserPrinter<URLRequestData, BearerAuth> {
-            Parse(.memberwise(BearerAuth.init(token:))) {
+        public var body: some ParserPrinter<URLRequestData, RFC_6750.Bearer> {
+            Parse(.memberwise(RFC_6750.Bearer.init(token:))) {
                 URLRouting.Headers {
                     URLRouting.Field("Authorization") {
                         "Bearer "
@@ -26,3 +26,4 @@ extension BearerAuth {
         }
     }
 }
+
