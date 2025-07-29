@@ -11,8 +11,8 @@ extension String {
 
 extension Target.Dependency {
     static var authentication: Self { .target(name: .authentication) }
-//    static var authenticationURLRouting: Self { .target(name: .authenticationURLRouting) }
-//    static var authenticationEmailAddress: Self { .target(name: .authenticationEmailAddress) }
+    static var authenticationURLRouting: Self { .target(name: .authenticationURLRouting) }
+    static var authenticationEmailAddress: Self { .target(name: .authenticationEmailAddress) }
 }
 
 extension Target.Dependency {
@@ -44,42 +44,42 @@ let package = Package(
         .target(
             name: .authentication,
             dependencies: [
-//                .authenticationURLRouting,
-//                .authenticationEmailAddress,
+                .authenticationURLRouting,
+                .authenticationEmailAddress,
                 .rfc6750,
                 .rfc7617,
                 .urlRouting,
                 .emailaddress
             ]
         ),
-//        .target(
-//            name: .authenticationURLRouting,
-//            dependencies: [
-//                .rfc6750,
-//                .rfc7617,
-//                .urlRouting
-//            ]
-//        ),
-//        .testTarget(
-//            name: .authenticationURLRouting.tests,
-//            dependencies: [
-//                .authenticationURLRouting
-//            ]
-//        ),
-//        .target(
-//            name: .authenticationEmailAddress,
-//            dependencies: [
-//                .rfc6750,
-//                .rfc7617,
-//                .emailaddress
-//            ]
-//        ),
-//        .testTarget(
-//            name: .authenticationEmailAddress.tests,
-//            dependencies: [
-//                .authenticationEmailAddress
-//            ]
-//        ),
+        .target(
+            name: .authenticationURLRouting,
+            dependencies: [
+                .rfc6750,
+                .rfc7617,
+                .urlRouting
+            ]
+        ),
+        .testTarget(
+            name: .authenticationURLRouting.tests,
+            dependencies: [
+                .authenticationURLRouting
+            ]
+        ),
+        .target(
+            name: .authenticationEmailAddress,
+            dependencies: [
+                .rfc6750,
+                .rfc7617,
+                .emailaddress
+            ]
+        ),
+        .testTarget(
+            name: .authenticationEmailAddress.tests,
+            dependencies: [
+                .authenticationEmailAddress
+            ]
+        ),
     ],
     swiftLanguageModes: [.v6]
 )
