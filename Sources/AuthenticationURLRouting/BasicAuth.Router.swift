@@ -14,7 +14,7 @@ extension RFC_7617.Basic {
         
         public init(){}
         
-        public var body: some URLRouting.ParserPrinter<URLRequestData, RFC_7617.Basic> {
+        public var body: some URLRouting.Router<RFC_7617.Basic> {
             URLRouting.Headers {
                 URLRouting.Field("Authorization") {
                     RFC_7617.Basic.ParserPrinter()
@@ -30,17 +30,12 @@ extension RFC_7617.Basic {
         public init(){}
         
         public var body: some URLRouting.ParserPrinter<Substring, RFC_7617.Basic> {
-            
             "Basic "
             URLRouting.Parse(.string)
                 .map(
                     .convert(
-                        apply: { (base64String: String) -> RFC_7617.Basic? in
-                            try? RFC_7617.Basic.parse(from: "Basic \(base64String)")
-                        },
-                        unapply: { (basic: RFC_7617.Basic) -> String? in
-                            basic.encoded()
-                        }
+                        apply: { try? RFC_7617.Basic.parse(from: "Basic \($0)") },
+                        unapply: { $0.encoded() }
                     )
                 )
             
